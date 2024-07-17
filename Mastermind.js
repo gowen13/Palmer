@@ -25,8 +25,9 @@ function resetGame() {
     // You'll need to activate the submit button
     // You'll want to clear any rows from a previous game if they exist
     let rows = document.getElementsByClassName("mmRow");
-    for(let i = 1; i < rows.length; i++){
-        document.removeChild(rows[i]);
+    let length = rows.length;
+    for (let i = 1; i < length; i++){
+        rows[1].remove();
     }
 }
 //a function here that will pick a random 4-color code and
