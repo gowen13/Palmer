@@ -59,16 +59,21 @@ function madeGuess(event){
     }
     let feedback = document.createElement("div");
     // creates feedback part and adds elements to it
-    let countCorrect = 0;
     feedback.className = "feedback";
+    let visibleOrNo = 'hidden';
     for (let i = 0; i < secretCode.length; i++){
         let color = "white";
         if (selects[i].value == secretCode[i]){
             color = "black";
-            countCorrect++;
+        }
+        for (let color2 of secretCode){
+            if (color2 == selects[i].value){
+                visibleOrNo = 'visible';
+            }
         }
         let correctOrNo = document.createElement("div");
         correctOrNo.className = color + " indicator";
+        correctOrNo.style.visibility = visibleOrNo;
         feedback.appendChild(correctOrNo);
     }
     //brings everything together
